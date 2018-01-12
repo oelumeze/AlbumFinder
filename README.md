@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 # `angular-seed` — the seed for AngularJS apps
 
 This project is an application skeleton for a typical [AngularJS][angularjs] web app. You can use it
@@ -298,3 +299,7 @@ For more information on AngularJS please check out [angularjs.org][angularjs].
 # AlbumFinder
 Itunes Sample API to get all alibums of any artist
 >>>>>>> origin
+=======
+# AlbumFinder
+Itunes Sample API to get all alibums of any artist
+>>>>>>> b20f589b535b23b3427c85660e2ae554482db603
