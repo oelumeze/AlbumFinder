@@ -1,0 +1,42 @@
+<div class="main-container">
+    <form>
+        <div style="width:50%; margin:auto;">
+            <h1>Album Finder</h1>
+            <input type="text" ng-model="artistName" placeholder="Enter Artist">
+            <button ng-click="findAlbum()">Search</button>
+        </div>
+    </form>
+
+	<div class="">
+		<div ng-if="albums.resultCount === 0">
+			<p>There are no Albums found for the specified artist</p>
+		</div>
+
+
+		<!-- if an album was found for the specified artist -->
+		<div ng-if="albums && albums.resultCount > 0">
+			<p style="text-align:center;">{{ albums.resultCount }} Album(s) Returned for "{{ artistName }}"</p>
+             <div class="sort-style">
+                 <h5>Sort By Relevance : </h5>
+                <select ng-model="relevance" ng-change="getByRelevance(relevance)">
+                    <option value="random">Random</option>
+                    <option value="oldest">Oldest</option>
+                    <option value="newest">Newest</option>
+                </select>
+            </div>
+			<div class="row " >
+				<div class="col-4 col-m-6"  ng-repeat="album in albums.results">
+					<div class="album-card card-style">
+						<img src="{{ album.artworkUrl100 }}" alt="Avatar" style="width:100%">
+						<div class="container">
+							<h4><b>{{ album.collectionName }}</b></h4>
+                            <p>{{ album.artistName }} </p>
+							<p>{{ album.releaseDate | date : 'yyyy' }}</p>
+							<!-- show only the year it was released -->
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
